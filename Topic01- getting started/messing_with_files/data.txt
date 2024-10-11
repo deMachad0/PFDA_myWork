@@ -1,0 +1,10 @@
+<<<<<<< HEAD:PFDA -mywork/datafiles/lectures/Topic01- getting started/messing_with_files/data.txt
+"Sample TXT data" 
+=======
+23
+23
+23
+23
+0
+23
+>>>>>>> dfbd81a (Add Topic03-pandas folder with its contents):Topic01- getting started/exercises-lab01/data.txt
