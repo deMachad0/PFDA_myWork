@@ -10,6 +10,8 @@ people_filename= os.path.join(DATADIR, "people-100.csv")
 people_df = pd.read_csv(people_filename)
 print(people_df.head(3))
 
+#The domain of the email addresses is extracted by splitting
+#  the Email column by '@' and taking the second part
 people_df['domain'] = people_df['Email'].str.split('@').str[1]
 print(people_df.head(3))
 
@@ -17,6 +19,8 @@ print(people_df.head(3))
 people_df.drop('domain', axis=1, inplace=True)
 print(people_df.head(3))
 
+# A pattern ".*@" is used to remove everything before the '@',
+# leaving only the domain in the Email.
 # using regex to get domain column back
 pattern = r".*@"
 people_df['domain'] = people_df['Email'].str.replace(pattern, '', regex=True)
@@ -54,6 +58,8 @@ people_df['extension'] = people_df['Phone'].str.replace(extension_pattern, '', r
 print(people_df.head(3))
 
 # extract the extension str.extract(pattern)
+#The correct approach is to use str.extract() with the pattern x(\d+) 
+# to extract just the extension numbers.
 extension_pattern = r"x(\d+)"
 people_df['extension'] = people_df['Phone'].str.extract(extension_pattern)
 print(people_df.head(3))
@@ -61,3 +67,5 @@ print(people_df.head(3))
 # to filter rows on a regular expression
 people_df[people_df['Phone'].str.contains(r'^\+|^00')]
 print(people_df.head(3))
+# The contains() method is used to filter rows where the Phone 
+# column starts with a + or 00, indicating international numbers.
