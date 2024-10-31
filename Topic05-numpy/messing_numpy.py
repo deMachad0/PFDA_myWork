@@ -134,3 +134,48 @@ y = np.array([[5,6], [7,8]])
 
 print(x + y)
 print(np.add(x, y))
+
+print(x - y)
+print(np.subtract(x, y))
+
+print(x * y)
+print(np.multiply(x, y))
+
+print(x / y)
+print(np.divide(x, y))
+
+print(np.sqrt(x)) # square root
+print()
+# "Dot product", using dot to multiply arrays
+x = np.array([[1,2], [3,4]])
+y = np.array([[5,6], [7,8]])
+
+v = np.array([9,10])
+w = np.array([11,12])
+
+print(v.dot(w))
+print(np.dot(v, w))
+
+# also the operator @ can be used, it's equivalent to dot
+print(v @ w)
+print()
+# using max, min and sum
+x = np.array([[1,2], [3,4], [4,5]])
+print(np.max(x))
+print(np.min(x))
+print(np.sum(x))
+print()
+
+# Also columns and rows can be used to calculate
+x = np.array([[1,2], [5,3], [4,6]])
+print(np.max(x, axis=0)) # each columns
+print(np.max(x, axis=1)) # each rows
+print()
+
+# also arrays can be reshaped
+w = np.array([[1], [2], [3]])
+print(w.shape)
+#remove the unnecessary extra dimension
+y = w.reshape(-1)
+print(y)
+print(y.shape)
